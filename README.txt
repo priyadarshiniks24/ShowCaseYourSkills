@@ -1,5 +1,5 @@
 
-*********************************************ShowCaseYourSkills:***************************************************
+*********************************************ShowCaseYourSkills:*******************************************
 
 ShowCaseYourSkills project is developed from scratch using Spring MVC, Maven, Tomcat Server, MySQl Workbench, JDBC, JQuery, JSP, Apache Tiles, CSS, log4j, JUnit.
 
@@ -14,7 +14,7 @@ Features:
 6) Logs						- User activity logs are captured using log4j.
 7) Test cases				- Unit test cases are written using JUnit framework.
 
-*******************************************************************************************************************
+***********************************************************************************************************
 
 How to setup the project?
 IDE		: Install eclipse, add maven and spring ide plugins.
@@ -46,7 +46,7 @@ CREATE TABLE `offers` (
 )
 
 
-*******************************************************************************************************************
+***********************************************************************************************************
 How to run the project?
 Right click on the project and select "run on server". 
 Then this can be accessed on any browser using the following link:  "http://localhost:8080/mvc/"

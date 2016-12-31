@@ -1,9 +1,11 @@
 package com.priya.web.dao;
 
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -27,7 +29,7 @@ public class UsersDao {
 	}
 
 	@Transactional
-	public void create(User user) {
+	public boolean create(User user) {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("username", user.getUsername());
 		params.addValue("password", passwordEncoder.encode(user.getPassword()));
@@ -38,14 +40,18 @@ public class UsersDao {
 		jdbc.update(
 				"insert into user(username,password,email,enabled) values(:username,:password,:email,:enabled)",
 				params);
-		jdbc.update(
+		return jdbc.update(
 				"insert into authorities(username,authority) values(:username,:authority)",
-				params);
+				params)==1;
 
 	}
 
 	public boolean exists(String username) {
 		return jdbc.queryForObject("select count(*) from user where username=:username", new MapSqlParameterSource("username", username), Integer.class)>=1;
+	}
+	
+	public List<User> getAllUsers(){
+		return jdbc.query("select * from user,  authorities where user.username=authorities.username", BeanPropertyRowMapper.newInstance(User.class));
 	}
 
 }

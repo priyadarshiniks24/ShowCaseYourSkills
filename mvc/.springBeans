@@ -11,6 +11,7 @@
 		<config>src/com/priya/web/beans/beans.xml</config>
 		<config>src/com/priya/web/beans/beans-service.xml</config>
 		<config>src/com/priya/web/beans/beans-security.xml</config>
+		<config>test/com/priya/web/test/config/beans.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
