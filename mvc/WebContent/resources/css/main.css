@@ -1,0 +1,81 @@
+@CHARSET "ISO-8859-1";
+
+input[type=text] {
+	margin-left: 10px;
+	width: 450px;
+}
+
+input[type=submit] {
+	margin-left: 10px;
+}
+
+input[type=password] {
+	margin-left: 10px;
+	width: 450px;
+}
+
+textarea {
+	margin-left: 10px;
+	width: 450px;
+	height: 200px;
+}
+
+td {
+	vertical-align: top;
+}
+
+td:FIRST-CHILD {
+	text-align: right;
+}
+
+.label {
+	text-align: right;
+}
+
+.error {
+	color: red;
+	font-size: small;
+	margin-left: 10px;
+}
+
+.valid {
+	color: green;
+	font-size: small;
+	margin-left: 10px;
+}
+
+div.footer {
+	font-size: small;
+	color: gray;
+}
+
+div.content {
+	position: relative;
+	padding: 40px;
+}
+
+div.header {
+	text-align: center;
+	width:100%;
+	height:40px;
+	background-color: gray;
+	position: relative;
+}
+
+.login{
+	top:10px;
+	position:absolute;
+	right:10px;
+	color:white;
+}
+
+a.title{
+	color:white;
+	font-size:35px;
+}
+
+.loginerror {
+	color: red;
+	font-size: small;
+	margin-left: 10px;
+}
